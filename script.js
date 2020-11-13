@@ -3,7 +3,6 @@ const onOffText = document.querySelector(".on_off_wrapper > span");
 const onOffButton = document.querySelector(".on_off");
 const onOffCircle = document.querySelector(".on_off>.on_off_circle");
 const levels = document.querySelectorAll("#level");
-const reminderText = document.querySelector(".reminder_text");
 
 let state = {
   running: false,
@@ -19,7 +18,7 @@ function updateState() {
     reminderText.innerText = "";
     return;
   }
-  [1, 2, 3]
+  [1, 2, 3]x
     .filter((x) => x !== state.level)
     .forEach((y) => {
       kipas.classList.remove(`level_${y}_animation`);
@@ -28,7 +27,6 @@ function updateState() {
   onOffText.innerText = "On";
   onOffButton.classList.add("active");
   onOffCircle.classList.add("active");
-  reminderText.innerText = "Jangan lupa dimatikan, agar supaya hemat listrik";
 }
 
 function toggleOnOff() {
