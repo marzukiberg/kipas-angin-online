@@ -15,10 +15,9 @@ function updateState() {
     onOffText.innerText = "Off";
     onOffButton.classList.remove("active");
     onOffCircle.classList.remove("active");
-    reminderText.innerText = "";
     return;
   }
-  [1, 2, 3]x
+  [1, 2, 3]
     .filter((x) => x !== state.level)
     .forEach((y) => {
       kipas.classList.remove(`level_${y}_animation`);
