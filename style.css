@@ -87,7 +87,8 @@ body {
   height: calc(var(--on-off-circle) * 2);
   width: var(--on-off-circle);
   position: relative;
-  border-radius: var(--on-off-circle);
+  border-radius: 50%;
+  outline: none;
   box-shadow: 0 0 5px black;
   cursor: pointer;
 }
