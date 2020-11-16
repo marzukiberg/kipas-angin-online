@@ -67,7 +67,7 @@ body {
 .control {
   position: absolute;
   bottom: 0;
-  height: 100px;
+  height: calc(var(--on-off-circle) * 5);
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -90,6 +90,7 @@ body {
   border-radius: var(--on-off-circle);
   box-shadow: 0 0 5px black;
   cursor: pointer;
+  outline: none;
 }
 .on_off_circle {
   width: var(--on-off-circle);
@@ -113,28 +114,82 @@ body {
 .level_wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
-.level_wrapper span {
+
+.level_switcher {
+  height: calc(var(--on-off-circle) * 3);
+  width: var(--on-off-circle);
+  border-radius: var(--on-off-circle);
+  background-color: #efefef;
+  box-shadow: 0 0 5px black;
+  position: relative;
+}
+
+.level_switcher ~ input {
+  display: none;
+}
+.level_circle {
+  width: var(--on-off-circle);
+  height: var(--on-off-circle);
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
-  letter-spacing: 2px;
+  border: none;
+  outline: none;
+}
+.level_circle:nth-child(1) {
+  bottom: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.level_circle:nth-child(2) {
+  bottom: var(--on-off-circle);
+}
+.level_circle:nth-child(3) {
+  top: 0;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.level_circle:hover,
+.level_circle.active {
+  background-color: rgb(30, 141, 104);
+  color: white;
 }
 
 .level_1_animation {
-  animation: rotate_level_1 0.3s linear infinite;
+  animation: rotate 0.3s linear infinite;
 }
 .level_2_animation {
-  animation: rotate_level_1 0.2s linear infinite;
+  animation: rotate 0.2s linear infinite;
 }
 .level_3_animation {
-  animation: rotate_level_1 0.1s linear infinite;
+  animation: rotate 0.1s linear infinite;
 }
 
-@keyframes rotate_level_1 {
+.stop {
+  animation: stop 0.3s;
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes stop {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0);
   }
 }
 
