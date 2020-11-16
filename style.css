@@ -88,6 +88,7 @@ body {
   width: var(--on-off-circle);
   position: relative;
   border-radius: var(--on-off-circle);
+  outline: none;
   box-shadow: 0 0 5px black;
   cursor: pointer;
   outline: none;
